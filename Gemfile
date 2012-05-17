@@ -5,6 +5,7 @@ gem 'pg'
 gem 'thin'
 gem 'twitter-bootstrap-rails'
 gem 'heroku'
+gem 'comfortable_mexican_sofa'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

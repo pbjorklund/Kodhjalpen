@@ -32,6 +32,9 @@
 
     <div class="container">
       <%= yield %>
+      <% get_page_links.each do |page| %>
+        <%= page %>
+      <% end %>
 
       <hr>
 
