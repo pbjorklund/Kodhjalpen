@@ -8,7 +8,6 @@ FactoryGirl.define do
     children_count 1
     position 0
     is_published true
-    content "layout_content_a"
   end
 end
 

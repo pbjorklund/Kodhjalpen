@@ -2,7 +2,10 @@ FactoryGirl.define do
   factory :layout, class: Cms::Layout do
     label "Default Layout"
     identifier "default"
-    content "Page loaded!"
+    content <<-eos
+    Page loaded
+    <a href="developers/signup" class="btn btn-primary btn-large">Developer signup</a>
+    eos
     app_layout "application"
 
     css "default_css"
