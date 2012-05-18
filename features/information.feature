@@ -4,13 +4,5 @@ Feature: Information
 
   Scenario: Visiting the startpage
     Given I am on the startpage
-    Then I should see "Kodhjälpen är en samling av programmerare, designers och andra IT-intresserade människor som tillsammans vill göra nytta för lokal välgörenhet"
+    Then I should see "Page loaded"
 
-  Scenario Outline: Finding out more 
-    Given I am on the startpage
-    Then I should see <link>
-
-    Examples:
-      | link            |
-      | "Om kodhjälpen" |
-      | "Eventet"       |
