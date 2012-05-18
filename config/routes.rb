@@ -1,4 +1,6 @@
 Kodhjalpen::Application.routes.draw do
+  resource :developers
+  get 'developers/signup', to: 'developers#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
