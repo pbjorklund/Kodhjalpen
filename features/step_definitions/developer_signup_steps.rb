@@ -5,10 +5,11 @@ When /^I click on "(.*?)"$/ do |link|
 end
 
 When /^I fill in my details$/ do
-  fill_in :first_name, with: "Patrik"
-  fill_in :last_name, with: "Björklund"
-  fill_in :occupation, with: "SharePoint Consultant"
-  fill_in :city, with: "Göteborg"
-  fill_in :email, with: "p.bjorklund@gmail.com"
-  click_on "Register your talent"
+  fill_in "First name",  with: "Patrik"
+  fill_in "Last name",   with: "Björklund"
+  fill_in "Occupation",  with: "SharePoint Consultant"
+  fill_in "City",        with: "Göteborg"
+  fill_in "Email",       with: "p.bjorklund@gmail.com"
+
+  click_on "Börja göra nytta"
 end

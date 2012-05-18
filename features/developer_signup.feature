@@ -3,9 +3,6 @@ Feature: Developer signup
 
   Scenario: Signing up
     Given I am on the startpage
-    When I click on "Developer signup"
-    And I fill in my details
-    And I click on "Sign up"
-    Then I should see "You are now signed up!"
-
-
+    When  I click on "Developer signup"
+    And   I fill in my details
+    Then  I should see "Du är nu registrerad!"
