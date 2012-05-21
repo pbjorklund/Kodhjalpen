@@ -13,3 +13,7 @@ When /^I fill in my details$/ do
 
   click_on "Börja göra nytta"
 end
+
+Then /^I should see my name in the navigation$/ do
+  page.should have_content("Patrik Björklund")
+end
