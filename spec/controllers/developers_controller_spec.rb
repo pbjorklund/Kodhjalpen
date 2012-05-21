@@ -8,7 +8,7 @@ describe DevelopersController do
     end
   end
 
-  describe "POSTJ 'create'" do
+  describe "POST 'create'" do
     it "should redirect to homepage on success" do
       post :create, developer: FactoryGirl.attributes_for(:developer)
       response.should redirect_to root_path
