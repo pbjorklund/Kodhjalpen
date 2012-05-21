@@ -7,5 +7,7 @@ FactoryGirl.define do
     occupation "SharePoint Consultant"
     city "Gothenburg"
     email "p.bjorklund@gmail.com"
+    password "password"
+    password_confirmation "password"
   end
 end

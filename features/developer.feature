@@ -5,5 +5,5 @@ Feature: Developer signup
     Given I am on the startpage
     When  I click on "Developer signup"
     And   I fill in my details
-    Then  I should see "Du är nu registrerad!"
+    Then  I should see a alert-success message
     And   I should see my name in the navigation

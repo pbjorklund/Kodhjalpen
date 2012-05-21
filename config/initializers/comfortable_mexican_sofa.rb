@@ -6,7 +6,7 @@ ComfortableMexicanSofa.configure do |config|
   
   # Module responsible for authentication. You can replace it with your own.
   # It simply needs to have #authenticate method. See http_auth.rb for reference.
-  #   config.admin_auth = 'ComfortableMexicanSofa::HttpAuth'
+  config.admin_auth = 'CmsDeviseAuth'
   
   # Module responsible for public authentication. Similar to the above. You also
   # will have access to @cms_site, @cms_layout, @cms_page so you can use them in
@@ -109,3 +109,14 @@ ComfortableMexicanSofa::HttpAuth.password = ENV['CMS_PASSWORD']
 #   ComfortableMexicanSofa::ViewHooks.add(:navigation, '/layouts/admin/navigation')
 #   ComfortableMexicanSofa::ViewHooks.add(:html_head, '/layouts/admin/html_head')
 #   ComfortableMexicanSofa::ViewHooks.add(:page_form, '/layouts/admin/page_form')
+
+module CmsDeviseAuth
+  def authenticate
+    #TODO unless current_user && current_user.admin?
+    unless current_developer
+      #TODO admin
+      redirect_to new_developer_session, notice: "Sign in first"
+    end
+  end
+end
+
