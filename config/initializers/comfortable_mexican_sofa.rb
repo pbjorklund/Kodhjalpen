@@ -113,9 +113,9 @@ ComfortableMexicanSofa::HttpAuth.password = ENV['CMS_PASSWORD']
 module CmsDeviseAuth
   def authenticate
     #TODO unless current_user && current_user.admin?
-    unless current_developer
+    unless current_user
       #TODO admin
-      redirect_to new_developer_session, notice: "Sign in first"
+      redirect_to new_user_session, notice: "Sign in first"
     end
   end
 end
