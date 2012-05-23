@@ -1,10 +1,13 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Ändra <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :first_name, :autofocus => true %>
+    <%= f.input :last_name, :required => true %>
+    <%= f.input :occupation, :required => true %>
+    <%= f.input :email, :required => true %>
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
@@ -15,8 +18,8 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Avsluta mitt konto</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+<p>Missnöjd? <%= link_to "Ta bort mitt konto", registration_path(resource_name), :confirm => "Är du säker?", :method => :delete %>.</p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Tillbaks", :back %>

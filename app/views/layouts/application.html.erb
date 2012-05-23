@@ -20,15 +20,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="/">Kodhjälpen</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <%= get_navigation.inject('') { |result, el| result + el }.html_safe %>
-              <% if developer_signed_in? %>
-                <%= current_developer.full_name %>
-                <%= link_to "Sign out", destroy_developer_session_path, :method => :delete %>
-              <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <%= render 'shared/navigation' %>
         </div>
       </div>
     </div>
@@ -39,7 +31,6 @@
 
       <footer>
       <%= cms_snippet_content('footer') %>
-      </footer>
     </div>
   </body>
 </html>
