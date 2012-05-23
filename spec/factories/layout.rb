@@ -4,7 +4,7 @@ FactoryGirl.define do
     identifier "default"
     content <<-eos
     Page loaded
-    <a href="developers/sign_up" class="btn btn-primary btn-large">Developer signup</a>
+    <a href="users/sign_up" class="btn btn-primary btn-large">User signup</a>
     eos
     app_layout "application"
 
