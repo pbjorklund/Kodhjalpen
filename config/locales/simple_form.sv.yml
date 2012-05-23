@@ -1,0 +1,24 @@
+# encoding: utf-8
+sv:
+  simple_form:
+    "yes": 'Ja'
+    "no": 'Nej'
+    required:
+      text: 'Krävs'
+      mark: '*'
+    error_notification:
+      default_message: 'Ändra felen nedan och försök igen:'
+    labels:
+      defaults:
+        password: 'Lösenord'
+        password_confirmation: 'Upprepa lösenord'
+        email: "Epost"
+        remember_me: "Håll mig inloggad:"
+        first_name: "Förnamn"
+        last_name: "Efternamn"
+        occupation: "Sysselsättning"
+        city: "Stad"
+    hints:
+      defaults:
+        username: 'Användarnamn för att logga in.'
+        password: 'Inga konstiga tecken, tack.'
