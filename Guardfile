@@ -27,7 +27,7 @@ guard 'rspec', :version => 2 do
 end
 
 
-guard 'cucumber', :cli => '-c --no-profile --drb --format progress', :all_on_start => true, :all_after_pass => false do
+guard 'cucumber', :cli => '-c --no-profile --drb --format progress', :all_on_start => false, :all_after_pass => false do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})          { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
