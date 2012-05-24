@@ -16,3 +16,4 @@
 .rvmrc
 rerun.txt
 .rspec
+*.thor
