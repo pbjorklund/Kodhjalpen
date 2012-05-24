@@ -1,5 +1,6 @@
 Kodhjalpen::Application.routes.draw do
   devise_for :user_auths
+  resources :developers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

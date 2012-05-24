@@ -6,7 +6,7 @@ FactoryGirl.define do
     last_name "Björklund"
     occupation "Konsult"
     city "Göteborg"
-    after(:create) { |dev|
+    after(:build) { |dev|
       dev.user_auth = FactoryGirl.build(:user_auth)
     }
   end
