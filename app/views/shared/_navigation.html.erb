@@ -3,19 +3,19 @@
     <%= get_navigation.inject('') { |result, el| result + el }.html_safe %>
   </ul>
   <ul class="nav pull-right">
-    <% if user_signed_in? %>
+    <% if user_auth_signed_in? %>
       <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <%= current_user.email %> 
+        <%= current_user_auth.email %> 
         <b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <%= link_to "Uppdatera profil", edit_user_registration_path %>
-        <%= link_to "Logga ut", destroy_user_session_path, :method => :delete %>
+        <%= link_to "Uppdatera profil", edit_user_auth_registration_path %>
+        <%= link_to "Logga ut", destroy_user_auth_session_path, :method => :delete %>
       </ul>
       </li>
     <% else %>
-      <%= content_tag :li, link_to("Logga in", new_user_session_path) %>
-      <%= content_tag :li, link_to("Registrera dig", new_user_registration_path) %>
+      <%= content_tag :li, link_to("Logga in", new_user_auth_session_path) %>
+      <%= content_tag :li, link_to("Registrera dig", new_user_auth_registration_path) %>
     <% end %>
   </ul>
 </div><!--/.nav-collapse -->
