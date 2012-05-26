@@ -4,7 +4,7 @@ FactoryGirl.define do
     identifier "cucumber_test"
     hostname "cucumber_test.local"
     path "test"
-    locale "en"
+    locale "sv"
     is_mirrored "false"
   end
 end
