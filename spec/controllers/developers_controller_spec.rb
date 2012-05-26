@@ -32,5 +32,33 @@ describe DevelopersController do
       response.should render_template :new
     end
   end
+
+  describe "GET 'edit'" do
+    before(:each) do
+      @developer = FactoryGirl.create(:developer)
+      controller.stub(:current_user_auth).and_return(@developer.user_auth)
+    end
+    it "renders http success when id matches users id" do
+      controller.stub(:current_user).and_return(@developer)
+      get :edit, id: @developer.id
+      response.should be_success
+    end
+
+    it "renders root_url when no user is signed in" do
+      controller.stub(:current_user)
+      get :edit, id: @developer.id
+      response.should redirect_to root_url
+    end
+
+    it "renders root_url when trying to edit another users profile" do
+      @second_developer = FactoryGirl.create(:second_developer)
+     
+      controller.stub(:current_user).and_return(@developer)
+      get :edit, id: @second_developer.id
+      flash[:error].should_not be_nil
+      response.should redirect_to root_url
+    end
+  end
+
 end
 

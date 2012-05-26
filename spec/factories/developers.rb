@@ -6,8 +6,20 @@ FactoryGirl.define do
     last_name "Björklund"
     occupation "Konsult"
     city "Göteborg"
-    after(:build) { |dev|
-      dev.user_auth = FactoryGirl.build(:user_auth)
+    after(:create) { |dev|
+      dev.user_auth = FactoryGirl.create(:user_auth)
+    }
+  end
+end
+
+FactoryGirl.define do
+  factory :second_developer, class: Developer do
+    first_name "Nils"
+    last_name "Eriksson"
+    occupation "Terminal"
+    city "Göteborg"
+    after(:create) { |dev|
+      dev.user_auth = FactoryGirl.create(:second_user_auth)
     }
   end
 end

@@ -9,13 +9,13 @@
         <%= current_user_auth.email %> 
         <b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <%= link_to "Uppdatera profil", edit_user_auth_registration_path %>
+        <%= link_to "Uppdatera profil", edit_user_path(current_user.id) %>
         <%= link_to "Logga ut", destroy_user_auth_session_path, :method => :delete %>
       </ul>
       </li>
     <% else %>
       <%= content_tag :li, link_to("Logga in", new_user_auth_session_path) %>
-      <%= content_tag :li, link_to("Registrera dig", new_user_auth_registration_path) %>
+      <%= content_tag :li, link_to("Registrera dig", new_developer_path) %>
     <% end %>
   </ul>
 </div><!--/.nav-collapse -->
