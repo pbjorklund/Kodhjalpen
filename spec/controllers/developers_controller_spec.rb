@@ -15,7 +15,7 @@ describe DevelopersController do
       @attrs[:developer][:user_auth_attributes] = FactoryGirl.attributes_for(:user_auth)
     end
 
-    it "returns http success given a valid hash" do
+    it "redirects to root_path given a valid hash" do
       post :create, @attrs
       response.should redirect_to root_path
     end

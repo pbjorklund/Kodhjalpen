@@ -7,6 +7,7 @@ class DevelopersController < ApplicationController
   def create
     @developer = Developer.new params[:developer]
     if @developer.save
+      sign_in @developer.user_auth
       redirect_to root_path, notice: "Du har registrerats"
     else
       render :new

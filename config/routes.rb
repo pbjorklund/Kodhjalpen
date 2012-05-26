@@ -1,5 +1,12 @@
 Kodhjalpen::Application.routes.draw do
-  devise_for :user_auths
+  devise_for :user_auths, path: "auth", path_names: 
+    { sign_in: 'sign_in',
+      sign_out: 'logout',
+      password: 'secret',
+      confirmation: 'verification',
+      unlock: 'unblock',
+      registration: 'register' }
+
   resources :developers
 
   # The priority is based upon order of creation:
