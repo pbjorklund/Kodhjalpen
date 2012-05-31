@@ -25,6 +25,9 @@ class DevelopersController < ApplicationController
           flash[:error] = "Logga in för att uppdatera din profil"
           redirect_to root_url 
         end
+      else
+        flash[:error] = "Försökte redigera en ogiltig profil"
+        redirect_to root_url 
 
       end
     else

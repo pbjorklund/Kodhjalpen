@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   def edit_user_path id
     if current_user.class == Developer
       return edit_developer_path id
+    elsif current_user.class == Charity
+      return edit_charity_path id
     end
   end
 end
