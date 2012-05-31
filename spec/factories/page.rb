@@ -1,3 +1,4 @@
+# encoding: utf-8
 FactoryGirl.define do
   factory :page, class: Cms::Page do
     parent_id nil
@@ -5,6 +6,7 @@ FactoryGirl.define do
     label "Default Page"
     slug nil
     full_path "/"
+    content "blank"
     children_count 1
     position 0
     is_published true

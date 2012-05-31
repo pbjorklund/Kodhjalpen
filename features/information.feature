@@ -4,5 +4,5 @@ Feature: Information
 
   Scenario: Visiting the startpage
     Given I am on the startpage
-    Then I should see "Page loaded"
+    Then I should see "Hjälp andra göra gott"
 

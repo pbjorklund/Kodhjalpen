@@ -10,3 +10,7 @@ When /^I fill in my charity details$/ do
 
   click_on "Skapa kontot"
 end
+
+Then /^I should see "(.*?)" in the navigation$/ do |email|
+  page.should have_content(email)
+end
