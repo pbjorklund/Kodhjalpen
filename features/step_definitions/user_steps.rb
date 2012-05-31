@@ -9,7 +9,7 @@ When /^I click on "(.*?)"$/ do |link|
   click_link link
 end
 
-When /^I fill in my details$/ do
+When /^I fill in my user details$/ do
   fill_in "Förnamn",           with: "Patrik"
   fill_in "Efternamn",         with: "Björklund"
   fill_in "Sysselsättning",    with: "Konsult"

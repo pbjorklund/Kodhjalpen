@@ -3,6 +3,6 @@ Feature: User signup
 
   Scenario: Signing up
     Given I am on the "/developers/new" page
-    When  I fill in my details
+    When  I fill in my user details
     Then  I should see a alert-success message
     And   I should see my email in the navigation
