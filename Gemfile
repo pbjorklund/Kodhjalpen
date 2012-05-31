@@ -23,6 +23,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'sextant'
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
