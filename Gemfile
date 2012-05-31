@@ -44,4 +44,6 @@ group :development, :test do
   gem 'growl' # also install growlnotify from the Extras/growlnotify/growlnotify.pkg in Growl disk image
   gem 'pry'
   gem 'pry-nav'
+  gem 'pry-rails'
+  gem 'awesome_print'
 end

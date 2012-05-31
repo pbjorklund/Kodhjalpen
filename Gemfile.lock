@@ -31,6 +31,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.8)
     arel (3.0.2)
+    awesome_print (1.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capybara (1.1.2)
@@ -150,6 +151,8 @@ GEM
       slop (>= 2.4.4, < 3)
     pry-nav (0.2.1)
       pry (~> 0.9.9)
+    pry-rails (0.1.6)
+      pry
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -244,6 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   capybara
   capybara-webkit
   coffee-rails (~> 3.2.1)
@@ -265,6 +269,7 @@ DEPENDENCIES
   pg
   pry
   pry-nav
+  pry-rails
   rails (= 3.2.3)
   rb-fsevent
   rspec-rails
