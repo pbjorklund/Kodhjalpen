@@ -1,0 +1,20 @@
+<%= simple_form_for @charity do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name, :required => true, autofocus: true %>
+    <%= f.input :mission, :required => true %>
+    <%= f.input :needs_help_with, :required => true %>
+    <%= f.input :city, :required => true %>
+    <%= f.simple_fields_for :user_auth do |p| %>
+      <%= p.input :email, required: true %>
+      <%= p.input :password, required: true %>
+      <%= p.input :password_confirmation, :required => true %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Börja göra nytta" %>
+  </div>
+<% end %>
+

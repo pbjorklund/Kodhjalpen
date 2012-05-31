@@ -7,7 +7,8 @@ Kodhjalpen::Application.routes.draw do
       unlock: 'unblock',
       registration: 'register' }
 
-  resources :developers
+  resources :developers, :only => [:new, :create, :edit]
+  resources :charities, :only => [:new, :create, :edit]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
