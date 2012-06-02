@@ -9,13 +9,21 @@
         <%= current_user_auth.email %> 
         <b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <%= link_to "Uppdatera profil", edit_user_path(current_user.id) %>
+        <%= link_to "Uppdatera profil", edit_polymorphic_path(current_user) %>
         <%= link_to "Logga ut", destroy_user_auth_session_path, :method => :delete %>
       </ul>
       </li>
     <% else %>
       <%= content_tag :li, link_to("Logga in", new_user_auth_session_path) %>
-      <%= content_tag :li, link_to("Registrera dig", new_developer_path) %>
+      <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Registrera dig
+        <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <%= link_to("Utvecklare", new_developer_path) %>
+        <%= link_to("Välgörenhet", new_charity_path) %>
+      </ul>
+      </li>
     <% end %>
   </ul>
 </div><!--/.nav-collapse -->
