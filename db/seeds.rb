@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-[Cms::Site, Cms::Page, Cms::Layout].map(&:delete_all)
-FactoryGirl.create(:site_with_page)
+case Rails.env
+when "development"
+  [Cms::Site, Cms::Page, Cms::Layout].map(&:delete_all)
+  FactoryGirl.create(:site_with_page)
+when "production"
+end
