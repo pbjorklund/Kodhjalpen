@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Namn</th>
+      <th>Stad</th>
+      <th>Målsättning</th>
+      <th>Behöver hjälp med</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charities.each do |charity| %>
+      <tr>
+        <td><%= charity.name %></td>
+        <td><%= charity.city %></td>
+        <td><%= charity.mission %></td>
+        <td><%= charity.needs_help_with %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

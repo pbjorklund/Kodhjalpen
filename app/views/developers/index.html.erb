@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Namn</th>
+      <th>Stad</th>
+      <th>Sysselsättnig</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @developers.each do |developer| %>
+      <tr>
+        <td><%= developer.full_name %></td>
+        <td><%= developer.city %></td>
+        <td><%= developer.occupation %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
