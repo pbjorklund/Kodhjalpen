@@ -46,5 +46,7 @@ end
 Spork.each_run do
   FactoryGirl.factories.clear
   FactoryGirl.find_definitions  
+
+  Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f }
 end
 
