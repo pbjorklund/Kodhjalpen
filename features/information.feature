@@ -7,6 +7,12 @@ Feature: Information
     Then I should see "Hjälp andra göra gott"
 
   Scenario: Viewing developers that have signed up
-    Given I am on the "/developers" page
+    Given there are developers in the database
+    And I am on the "/developers" page
     Then I should see a list of developers
+
+  Scenario: Viewing charities that have signed up
+    Given there are charities in the database
+    And I am on the "/charities" page
+    Then I should see a list of charities
 
