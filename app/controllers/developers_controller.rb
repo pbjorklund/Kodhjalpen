@@ -34,4 +34,18 @@ class DevelopersController < ApplicationController
       redirect_to root_url, notice: "Logga in för att uppdatera din profil"
     end
   end
+
+  def index
+    @developers = Developer.all
+  end
+
+  def update
+    @developer = Developer.find(params[:id])
+    if @developer.update_attributes(params[:developer])
+      sign_in @developer.user_auth
+      redirect_to root_path, :notice  => "Uppdaterat profil"
+    else
+      render :action => 'edit'
+    end
+  end
 end

@@ -59,6 +59,37 @@ describe DevelopersController do
       response.should redirect_to root_url
     end
   end
+  
+  describe "GET 'index'" do
+    it "returns http success" do
+      get :index
+      response.should be_success
+    end
+
+    it "finds developers" do
+      FactoryGirl.create(:developer)
+      get :index
+      assigns(:developers).should_not be_nil
+    end
+  end
+
+  describe "PUT 'update'" do
+    before(:each) do
+      @developer = FactoryGirl.create(:developer)
+    end
+
+    it "update action should render edit template when model is invalid" do
+      Developer.any_instance.stub(:update_attributes).and_return(false)
+      put :update, :id => @developer.id
+      response.should render_template(:edit)
+    end
+
+    it "update action should redirect when model is valid" do
+      Developer.any_instance.stub(:valid?).and_return(true)
+      put :update, :id => @developer.id
+      response.should redirect_to root_path
+    end
+  end
 
 end
 
