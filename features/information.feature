@@ -6,3 +6,7 @@ Feature: Information
     Given I am on the startpage
     Then I should see "Hjälp andra göra gott"
 
+  Scenario: Viewing developers that have signed up
+    Given I am on the "/developers" page
+    Then I should see a list of developers
+

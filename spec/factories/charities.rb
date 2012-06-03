@@ -19,7 +19,8 @@ FactoryGirl.define do
     mission "Hjälpa välgörenhet"
     needs_help_with "Utveckling, design, aktivism"
     after(:create) { |charity|
-      charity.user_auth = FactoryGirl.create(:user_auth, email: "kodhjalpen@gmail.com")
+      auth = FactoryGirl.create(:user_auth, email: "kodhjalpen2@gmail.com")
+      charity.user_auth = auth
     }
   end
 end

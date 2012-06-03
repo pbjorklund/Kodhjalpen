@@ -33,4 +33,18 @@ class CharitiesController < ApplicationController
       redirect_to root_url, notice: "Logga in för att uppdatera din profil"
     end
   end
+
+  def index
+    @charities = Charity.all
+  end
+
+  def update
+    @charity = Charity.find(params[:id])
+    if @charity.update_attributes(params[:charity])
+      sign_in @charity.user_auth
+      redirect_to root_path, :notice  => "Uppdaterat profil"
+    else
+      render :action => 'edit'
+    end
+  end
 end

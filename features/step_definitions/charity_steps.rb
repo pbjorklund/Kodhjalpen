@@ -8,7 +8,7 @@ When /^I fill in my charity details$/ do
   fill_in "Lösenord",                           with: "password"
   fill_in "Upprepa lösenord",                   with: "password"
 
-  click_on "Skapa kontot"
+  click_on "Utför"
 end
 
 Then /^I should see "(.*?)" in the navigation$/ do |email|
