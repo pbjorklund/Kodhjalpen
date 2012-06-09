@@ -34,6 +34,14 @@ describe UserAuth do
         valid_user_auth.should be_invalid
       end
     end
+
+    it "is not admin by default" do
+      valid_user_auth.admin == false
+    end
+
+    it "can't get it's admin attribute set by mass assignment" do
+      expect { valid_user_auth.update_attributes(admin: true) }.to raise_error
+    end
   end
 end
 
