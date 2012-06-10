@@ -14,3 +14,8 @@ end
 Then /^I should see "(.*?)" in the navigation$/ do |email|
   page.should have_content(email)
 end
+
+Given /^I am on the edit page for a signed in user$/ do
+  click_link "Uppdatera profil"
+end
+

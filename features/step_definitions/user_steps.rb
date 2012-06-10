@@ -1,15 +1,5 @@
 # encoding: utf-8
-Given /^I am on the "(.*?)" page$/ do |page|
-  [Cms::Site, Cms::Page, Cms::Layout].map(&:delete_all)
-  FactoryGirl.create(:site_with_page)
-  visit page
-end
-
-When /^I click on "(.*?)"$/ do |link|
-  click_link link
-end
-
-When /^I fill in my user details$/ do
+When /^I fill in my developer details$/ do
   fill_in "Förnamn",           with: "Patrik"
   fill_in "Efternamn",         with: "Björklund"
   fill_in "Sysselsättning",    with: "Konsult"
@@ -18,7 +8,7 @@ When /^I fill in my user details$/ do
   fill_in "Lösenord",          with: "password"
   fill_in "Upprepa lösenord",  with: "password"
 
-  click_on "Börja göra nytta"
+  click_on "Utför"
 end
 
 Then /^I should see my email in the navigation$/ do
