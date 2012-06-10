@@ -113,9 +113,13 @@ ComfortableMexicanSofa::HttpAuth.password = ENV['CMS_PASSWORD']
 module CmsDeviseAuth
   def authenticate
     if current_user.nil?
-      redirect_to new_user_auth_session_path, notice: "Du måste logga in innan du kommer åt CMS'et" 
+      flash[:alert] = "Du måste logga in innan du kommer åt CMS'et"
+      redirect_to new_user_auth_session_path  
     else
-      redirect_to root_path, notice: "Du är inte administratör" unless current_user_auth.admin?
+      unless current_user_auth.admin?
+        flash[:error] = "Du är inte administratör"
+        redirect_to root_path 
+      end
     end
   end
 end
