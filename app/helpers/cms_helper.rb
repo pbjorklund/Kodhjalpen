@@ -1,12 +1,16 @@
 module CmsHelper
   def get_navigation
-    #OPTIMIZE Pray to god that we only have one site
+    #Pray to god that we only have one site
     @cms_site ||= Cms::Site.first
 
     @cms_site.pages.root.children.published.map do |page|
-      css_class = current_page?(page.full_path) ? "active" : ""
-      link = link_to page.label, page.full_path 
-      content_tag 'li', link, class: css_class
+      get_navigation_link page.full_path, page.label
     end
+  end
+
+  def get_navigation_link path, link_name
+    css_class = current_page?(path) ? "active" : ""
+    link = link_to link_name, path 
+    content_tag 'li', link, class: css_class
   end
 end

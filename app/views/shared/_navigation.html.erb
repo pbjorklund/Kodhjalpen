@@ -3,9 +3,10 @@
     <%= get_navigation.inject('') { |result, el| result + el }.html_safe %>
   </ul>
   <ul class="nav pull-right">
-    <%= content_tag 'li', link_to("Utvecklare", developers_path) %>
-    <%= content_tag 'li', link_to("Välgörenheter", charities_path) %>
+    <%= get_navigation_link developers_path, "Utvecklare" %>
+    <%= get_navigation_link charities_path, "Välgörenhet" %>
     <li class="divider-vertical"></li>
+
     <% if user_auth_signed_in? %>
       <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
